@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PRA UAS &#8212; Penambangan Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PRA_UAS';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Binnings Technics" href="Binnings_Technics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="Penambangan Data - Home"/>
+    <img src="_static/logo.jpeg" class="logo__image only-dark pst-js-only" alt="Penambangan Data - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Penambangan Data
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">Data Understanding</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tugas_2.html">Deteksi Outlier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="AKURASI.html">Penjelasan Deteksi Outlier</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS_Pendat1.html">UTS Pendat</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="Clustering.html"><strong>Algoritma <em>K-Means</em></strong></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Fuzzy_CMeans.html"><strong>FUZZY C-MEANS CLUSTERING</strong></a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="DecisionTreeClassifler.html">Decision Tree Classifler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Binnings_Technics.html">Binnings Technics</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PRA UAS</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPRA_UAS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/PRA_UAS.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PRA UAS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PRA UAS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#memilih-satu-dataset-dari">1.	Memilih satu dataset dari</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pra-uas">
+<h1>PRA UAS<a class="headerlink" href="#pra-uas" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="memilih-satu-dataset-dari">
+<h1>1.	Memilih satu dataset dari<a class="headerlink" href="#memilih-satu-dataset-dari" title="Link to this heading">#</a></h1>
+<p>saya mengambil data diabetes dari dalam link di bawah ini</p>
+<p><a class="reference external" href="https://archive.ics.uci.edu/datasets?Task=Clustering&amp;amp;skip=0&amp;amp;take=10&amp;amp;sort=desc&amp;amp;orderBy=NumHits&amp;amp;search=&amp;amp;Area=Law&amp;amp;Types=Tabular">https://archive.ics.uci.edu/datasets?Task=Clustering&amp;skip=0&amp;take=10&amp;sort=desc&amp;orderBy=NumHits&amp;search=&amp;Area=Law&amp;Types=Tabular</a></p>
+<p><strong>a.	Jelaskan setiap fitur atau variable data tersebut</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+
+<span class="c1"># Upload file dari komputer lokal</span>
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="c1"># Tampilkan nama file yang diupload</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">uploaded</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File &quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1">&quot; berhasil diupload (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">filename</span><span class="p">])</span><span class="si">}</span><span class="s1"> bytes)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Upload file dari komputer lokal</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baca file tanpa header</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Data Diabetes.xlsx&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Beri nama kolom manual</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>  <span class="c1"># Sesuaikan dengan jumlah kolom Anda</span>
+
+<span class="c1"># Atau gunakan kolom berdasarkan posisi</span>
+<span class="n">kolom_c</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Kolom ketiga (indeks 2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Kolom A: Tanggal (Date)
+Deskripsi: Menunjukkan tanggal dan waktu pengukuran/pencatatan data</p></li>
+</ol>
+<p>Format: Terdapat beberapa format tanggal yang digunakan:</p>
+<p>Format MM-DD-YYYY (contoh: 04-21-1991)</p>
+<p>Format YYYY-MM-DD (contoh: 1991-01-05)</p>
+<p>Catatan: Data mencakup periode dari April 1991 hingga September 1991</p>
+<ol class="arabic simple" start="2">
+<li><p>Kolom B: Waktu (Time)
+Deskripsi: Menunjukkan waktu pengukuran/pencatatan data</p></li>
+</ol>
+<p>Format: HH:MM:SS (format waktu 24 jam)</p>
+<p>Catatan: Waktu pengukuran bervariasi sepanjang hari, menunjukkan bahwa pengukuran dilakukan pada berbagai waktu</p>
+<ol class="arabic simple" start="3">
+<li><p>Kolom C: Kode Pengukuran (Measurement Code)
+Deskripsi: Kode numerik yang kemungkinan besar menunjukkan jenis pengukuran atau parameter yang diukur</p></li>
+</ol>
+<p>Nilai yang Muncul: 33, 34, 48, 58, 60, 62, 65</p>
+<p>Interpretasi Kemungkinan:</p>
+<p>33: Kemungkinan pengukuran gula darah (glukosa)</p>
+<p>34: Kemungkinan pengukuran insulin</p>
+<p>48: Kemungkinan pengukuran HbA1c (hemoglobin terglikasi)</p>
+<p>58: Kemungkinan pengukuran gula darah puasa</p>
+<p>60: Kemungkinan pengukuran gula darah 2 jam setelah makan</p>
+<p>62: Kemungkinan pengukuran gula darah acak</p>
+<p>65: Kemungkinan indikator kondisi khusus (nilainya selalu 0)</p>
+<ol class="arabic simple" start="4">
+<li><p>Kolom D: Nilai Pengukuran (Measurement Value)
+Deskripsi: Nilai hasil pengukuran yang sesuai dengan kode di Kolom C</p></li>
+</ol>
+<p>Rentang Nilai: Bervariasi tergantung kode pengukuran</p>
+<p>Untuk kode 33 (glukosa): biasanya antara 2-13</p>
+<p>Untuk kode 34 (insulin): biasanya antara 13-16</p>
+<p>Untuk kode 48 (HbA1c): biasanya antara 35-340</p>
+<p>Untuk kode 58 (gula darah puasa): biasanya antara 55-313</p>
+<p>Untuk kode 60 (gula darah postprandial): biasanya antara 54-306</p>
+<p>Untuk kode 62 (gula darah acak): biasanya antara 43-343</p>
+<p>Untuk kode 65: selalu bernilai 0</p>
+<p><strong>b.	Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong></p>
+<ol class="arabic simple">
+<li><p>Import Library yang Dibutuhkan</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Muat Data dan Cek Struktur Dasar</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ganti &#39;Data Diabetes.xlsx&#39; dengan nama file Anda</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Data Diabetes.xlsx&#39;</span><span class="p">)</span>
+
+<span class="c1"># Cek 5 baris pertama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Cek info dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Informasi Dataset:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="c1"># Cek statistik deskriptif</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Statistik Deskriptif:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   04-21-1991  09:09:00  58  100
+0  04-21-1991  09:09:00  33    9
+1  04-21-1991  09:09:00  34   13
+2  04-21-1991  17:08:00  62  119
+3  04-21-1991  17:08:00  33    7
+4  04-21-1991  22:51:00  48  123
+
+Informasi Dataset:
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 942 entries, 0 to 941
+Data columns (total 4 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   04-21-1991  942 non-null    object
+ 1   09:09:00    942 non-null    object
+ 2   58          942 non-null    int64 
+ 3   100         942 non-null    int64 
+dtypes: int64(2), object(2)
+memory usage: 29.6+ KB
+None
+
+Statistik Deskriptif:
+               58         100
+count  942.000000  942.000000
+mean    44.366242   67.375796
+std     12.921435   85.656153
+min     33.000000    0.000000
+25%     33.000000    7.000000
+50%     34.000000   14.500000
+75%     58.000000  122.000000
+max     65.000000  343.000000
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Pengecekan Missing Values</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Missing Values per Kolom:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Visualisasi missing values</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Visualisasi Missing Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing Values per Kolom:
+04-21-1991    0
+09:09:00      0
+58            0
+100           0
+dtype: int64
+</pre></div>
+</div>
+<img alt="_images/4b4053872e77a09413aa3c17cda0e427992a8e367f35c275c578acb2964c47a3.png" src="_images/4b4053872e77a09413aa3c17cda0e427992a8e367f35c275c578acb2964c47a3.png" />
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Pengecekan Duplikat</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah Data Duplikat:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Data Duplikat: 0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Analisis Outlier</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Untuk kolom numerik (C dan D)</span>
+<span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numeric_cols</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeric_cols</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Hitung outlier dengan IQR</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span>
+
+    <span class="n">outliers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Outlier di kolom </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8cfe75f5820519a003f3a15b60d28db689784385ef573b3493a98e4e6c88721e.png" src="_images/8cfe75f5820519a003f3a15b60d28db689784385ef573b3493a98e4e6c88721e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outlier di kolom 58: 0
+
+Outlier di kolom 100: 12
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Analisis Kode Pengukuran (Kolom C)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Frekuensi Kode Pengukuran:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Kode Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kode&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frekuensi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frekuensi Kode Pengukuran:
+C
+33    384
+34    139
+58    135
+62    102
+48     78
+60     54
+65     51
+Name: count, dtype: int64
+</pre></div>
+</div>
+<img alt="_images/e5b4dab91c8fe84b2579b81ab23f0290070d492faa870f2b0c0b04f21a520f73.png" src="_images/e5b4dab91c8fe84b2579b81ab23f0290070d492faa870f2b0c0b04f21a520f73.png" />
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Analisis Nilai Pengukuran per Kode</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pisahkan data berdasarkan kode pengukuran</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">codes</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">code</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Distribusi Nilai untuk Kode </span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nilai Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7bc400dec1177b5f70ce74383009d8bdf61945961d82dca73733c36048c9d722.png" src="_images/7bc400dec1177b5f70ce74383009d8bdf61945961d82dca73733c36048c9d722.png" />
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Analisis Temporal</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Konversi kolom tanggal ke format datetime</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+
+<span class="c1"># Ekstrak bulan dan hari</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+
+<span class="c1"># Analisis tren bulanan</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rata-rata Nilai Pengukuran per Bulan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nilai Rata-rata&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Bulan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/38919ba7561b90ea03379ed9aba1feb680b9f2eb6deb7cee505aad7686ee9f18.png" src="_images/38919ba7561b90ea03379ed9aba1feb680b9f2eb6deb7cee505aad7686ee9f18.png" />
+</div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Korelasi Antar Variabel</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitung korelasi</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Visualisasi heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matriks Korelasi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1b551f58e08c82c2004513816824208d8eae9e1c49b5dd75a332d19afa71fa9d.png" src="_images/1b551f58e08c82c2004513816824208d8eae9e1c49b5dd75a332d19afa71fa9d.png" />
+</div>
+</div>
+<p>Hasil EDA yang Harus Diperhatikan:</p>
+<p>Missing Values:</p>
+<ol class="arabic simple">
+<li><p>Cek apakah ada data yang hilang di kolom mana pun</p></li>
+<li><p>Jika ada, tentukan strategi penanganan (imputasi atau penghapusan)</p></li>
+</ol>
+<p>Outlier:</p>
+<ol class="arabic simple">
+<li><p>Identifikasi nilai ekstrem di setiap kode pengukuran</p></li>
+<li><p>Tentukan apakah outlier adalah kesalahan atau data valid</p></li>
+</ol>
+<p>Distribusi Data:</p>
+<ol class="arabic simple">
+<li><p>Analisis distribusi nilai untuk setiap kode pengukuran</p></li>
+<li><p>Cek apakah distribusi normal atau perlu transformasi</p></li>
+</ol>
+<p>Pola Temporal:</p>
+<ol class="arabic simple">
+<li><p>Identifikasi pola atau tren seiring waktu</p></li>
+<li><p>Cek perbedaan pengukuran pagi/siang/malam</p></li>
+</ol>
+<p>Kualitas Data:</p>
+<ol class="arabic simple">
+<li><p>Verifikasi konsistensi nilai untuk setiap kode pengukuran</p></li>
+<li><p>Cek apakah ada nilai yang tidak masuk akal (misal: glukosa negatif)</p></li>
+</ol>
+<p><strong>c.	Visualisasikan data tersebut</strong></p>
+<ol class="arabic simple">
+<li><p>Visualisasi Dasar Distribusi Data</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Set style</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Visualisasi distribusi nilai pengukuran per kode</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Nilai per Kode Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kode Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nilai&#39;</span><span class="p">)</span>
+
+<span class="c1"># Histogram nilai pengukuran</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Nilai Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nilai&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frekuensi&#39;</span><span class="p">)</span>
+
+<span class="c1"># Count plot kode pengukuran</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekuensi Kode Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kode&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/430217f82f18e4b6b80013279ca0d09ea3b06d48347c7583d8245651382172e5.png" src="_images/430217f82f18e4b6b80013279ca0d09ea3b06d48347c7583d8245651382172e5.png" />
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Visualisasi Lanjutan per Kode Pengukuran</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pisahkan plot per kode pengukuran</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">codes</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">code</span><span class="p">]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">subset</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kode </span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1"> - Tren Temporal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tanggal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nilai&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+/tmp/ipython-input-32-1545199460.py:9: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.lineplot(x=&#39;A&#39;, y=&#39;D&#39;, data=subset, ci=None)
+</pre></div>
+</div>
+<img alt="_images/bf0c2ddd805401e0a09033e37bb3fc24ff917c5b3d4e847ee739bab9997e4a6d.png" src="_images/bf0c2ddd805401e0a09033e37bb3fc24ff917c5b3d4e847ee739bab9997e4a6d.png" />
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Heatmap Korelasi dan Pair Plot</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Heatmap korelasi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heatmap Korelasi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Pair plot untuk kode dan nilai</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;hour&#39;</span><span class="p">]],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Pair Plot Data&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/51a9cfee3be533a45f343deb482c15b7cec8d5caa9ce879eaff9542a5b6b7a6b.png" src="_images/51a9cfee3be533a45f343deb482c15b7cec8d5caa9ce879eaff9542a5b6b7a6b.png" />
+<img alt="_images/9d0c00336bd79234985fe3b1e33df48f311766f6625343b546158eac1aa0e8c3.png" src="_images/9d0c00336bd79234985fe3b1e33df48f311766f6625343b546158eac1aa0e8c3.png" />
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Visualisasi Interaktif (Menggunakan Plotly)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Plot interaktif temporal</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Trend Nilai Pengukuran Diabetes&#39;</span><span class="p">,</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;Tanggal&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;Nilai Pengukuran&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;Kode&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Box plot interaktif per kode</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribusi Nilai per Kode Pengukuran&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="5fd76ef2-2065-49f9-aabf-90df005c0450" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("5fd76ef2-2065-49f9-aabf-90df005c0450")) {                    Plotly.newPlot(                        "5fd76ef2-2065-49f9-aabf-90df005c0450",                        [{"hovertemplate":"Kode=58\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"58","line":{"color":"#000001","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"58","orientation":"v","showlegend":true,"x":["1991-04-21T00:00:00","1991-04-22T00:00:00","1991-04-23T00:00:00","1991-04-24T00:00:00","1991-04-25T00:00:00","1991-04-26T00:00:00","1991-04-27T00:00:00","1991-04-28T00:00:00","1991-04-29T00:00:00","1991-04-30T00:00:00","1991-01-05T00:00:00","1991-02-05T00:00:00","1991-03-05T00:00:00","1991-04-05T00:00:00","1991-05-05T00:00:00","1991-06-05T00:00:00","1991-07-05T00:00:00","1991-08-05T00:00:00","1991-09-05T00:00:00","1991-10-05T00:00:00","1991-11-05T00:00:00","1991-12-05T00:00:00","1991-05-13T00:00:00","1991-05-14T00:00:00","1991-05-15T00:00:00","1991-05-16T00:00:00","1991-05-17T00:00:00","1991-05-18T00:00:00","1991-05-19T00:00:00","1991-05-20T00:00:00","1991-05-21T00:00:00","1991-05-22T00:00:00","1991-05-23T00:00:00","1991-05-24T00:00:00","1991-05-25T00:00:00","1991-05-26T00:00:00","1991-05-27T00:00:00","1991-05-28T00:00:00","1991-05-29T00:00:00","1991-05-30T00:00:00","1991-05-31T00:00:00","1991-01-06T00:00:00","1991-02-06T00:00:00","1991-03-06T00:00:00","1991-04-06T00:00:00","1991-05-06T00:00:00","1991-06-06T00:00:00","1991-07-06T00:00:00","1991-08-06T00:00:00","1991-09-06T00:00:00","1991-10-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-06-13T00:00:00","1991-06-14T00:00:00","1991-06-15T00:00:00","1991-06-16T00:00:00","1991-06-17T00:00:00","1991-06-18T00:00:00","1991-06-19T00:00:00","1991-06-20T00:00:00","1991-06-21T00:00:00","1991-06-22T00:00:00","1991-06-23T00:00:00","1991-06-24T00:00:00","1991-06-25T00:00:00","1991-06-26T00:00:00","1991-06-27T00:00:00","1991-06-28T00:00:00","1991-06-29T00:00:00","1991-06-30T00:00:00","1991-01-07T00:00:00","1991-02-07T00:00:00","1991-03-07T00:00:00","1991-04-07T00:00:00","1991-05-07T00:00:00","1991-06-07T00:00:00","1991-07-07T00:00:00","1991-08-07T00:00:00","1991-09-07T00:00:00","1991-10-07T00:00:00","1991-11-07T00:00:00","1991-12-07T00:00:00","1991-07-13T00:00:00","1991-07-14T00:00:00","1991-07-15T00:00:00","1991-07-16T00:00:00","1991-07-17T00:00:00","1991-07-18T00:00:00","1991-07-19T00:00:00","1991-07-20T00:00:00","1991-07-21T00:00:00","1991-07-22T00:00:00","1991-07-23T00:00:00","1991-07-24T00:00:00","1991-07-25T00:00:00","1991-07-26T00:00:00","1991-07-27T00:00:00","1991-07-28T00:00:00","1991-07-29T00:00:00","1991-07-30T00:00:00","1991-07-31T00:00:00","1991-01-08T00:00:00","1991-02-08T00:00:00","1991-03-08T00:00:00","1991-04-08T00:00:00","1991-05-08T00:00:00","1991-06-08T00:00:00","1991-07-08T00:00:00","1991-08-08T00:00:00","1991-09-08T00:00:00","1991-10-08T00:00:00","1991-11-08T00:00:00","1991-12-08T00:00:00","1991-08-13T00:00:00","1991-08-14T00:00:00","1991-08-15T00:00:00","1991-08-16T00:00:00","1991-08-17T00:00:00","1991-08-19T00:00:00","1991-08-20T00:00:00","1991-08-21T00:00:00","1991-08-22T00:00:00","1991-08-23T00:00:00","1991-08-24T00:00:00","1991-08-25T00:00:00","1991-08-26T00:00:00","1991-08-27T00:00:00","1991-08-28T00:00:00","1991-08-29T00:00:00","1991-08-30T00:00:00","1991-08-31T00:00:00","1991-01-09T00:00:00","1991-02-09T00:00:00","1991-03-09T00:00:00"],"xaxis":"x","y":[100,216,257,239,67,77,259,109,128,179,86,147,305,133,183,91,121,251,87,255,136,236,108,65,183,117,76,244,125,87,122,77,297,246,149,312,295,75,273,217,163,313,102,69,227,75,142,141,182,173,171,156,55,233,194,76,94,133,103,262,152,207,142,184,113,142,168,265,206,263,193,197,66,255,267,256,166,182,169,94,184,129,258,251,225,107,178,121,109,130,257,153,59,261,111,118,70,123,160,87,204,109,90,79,244,246,234,101,165,247,335,201,209,129,199,249,246,251,159,103,98,163,59,138,251,293,89,152,283,135,253,165,183,168,110],"yaxis":"y","type":"scatter"},{"hovertemplate":"Kode=33\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"33","line":{"color":"#000002","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"33","orientation":"v","showlegend":true,"x":["1991-04-21T00:00:00","1991-04-21T00:00:00","1991-04-22T00:00:00","1991-04-22T00:00:00","1991-04-22T00:00:00","1991-04-23T00:00:00","1991-04-23T00:00:00","1991-04-24T00:00:00","1991-04-24T00:00:00","1991-04-24T00:00:00","1991-04-25T00:00:00","1991-04-25T00:00:00","1991-04-25T00:00:00","1991-04-25T00:00:00","1991-04-26T00:00:00","1991-04-26T00:00:00","1991-04-26T00:00:00","1991-04-27T00:00:00","1991-04-27T00:00:00","1991-04-28T00:00:00","1991-04-28T00:00:00","1991-04-29T00:00:00","1991-04-29T00:00:00","1991-04-29T00:00:00","1991-04-30T00:00:00","1991-04-30T00:00:00","1991-04-30T00:00:00","1991-01-05T00:00:00","1991-01-05T00:00:00","1991-01-05T00:00:00","1991-02-05T00:00:00","1991-02-05T00:00:00","1991-02-05T00:00:00","1991-03-05T00:00:00","1991-03-05T00:00:00","1991-03-05T00:00:00","1991-04-05T00:00:00","1991-04-05T00:00:00","1991-04-05T00:00:00","1991-05-05T00:00:00","1991-05-05T00:00:00","1991-05-05T00:00:00","1991-05-05T00:00:00","1991-06-05T00:00:00","1991-06-05T00:00:00","1991-06-05T00:00:00","1991-07-05T00:00:00","1991-07-05T00:00:00","1991-07-05T00:00:00","1991-08-05T00:00:00","1991-08-05T00:00:00","1991-08-05T00:00:00","1991-09-05T00:00:00","1991-09-05T00:00:00","1991-09-05T00:00:00","1991-10-05T00:00:00","1991-10-05T00:00:00","1991-10-05T00:00:00","1991-11-05T00:00:00","1991-11-05T00:00:00","1991-11-05T00:00:00","1991-12-05T00:00:00","1991-12-05T00:00:00","1991-12-05T00:00:00","1991-05-13T00:00:00","1991-05-13T00:00:00","1991-05-13T00:00:00","1991-05-14T00:00:00","1991-05-14T00:00:00","1991-05-14T00:00:00","1991-05-15T00:00:00","1991-05-15T00:00:00","1991-05-15T00:00:00","1991-05-16T00:00:00","1991-05-16T00:00:00","1991-05-17T00:00:00","1991-05-17T00:00:00","1991-05-17T00:00:00","1991-05-18T00:00:00","1991-05-18T00:00:00","1991-05-18T00:00:00","1991-05-19T00:00:00","1991-05-19T00:00:00","1991-05-19T00:00:00","1991-05-20T00:00:00","1991-05-20T00:00:00","1991-05-20T00:00:00","1991-05-21T00:00:00","1991-05-21T00:00:00","1991-05-21T00:00:00","1991-05-22T00:00:00","1991-05-22T00:00:00","1991-05-22T00:00:00","1991-05-23T00:00:00","1991-05-23T00:00:00","1991-05-24T00:00:00","1991-05-24T00:00:00","1991-05-25T00:00:00","1991-05-25T00:00:00","1991-05-25T00:00:00","1991-05-26T00:00:00","1991-05-26T00:00:00","1991-05-26T00:00:00","1991-05-27T00:00:00","1991-05-27T00:00:00","1991-05-27T00:00:00","1991-05-28T00:00:00","1991-05-28T00:00:00","1991-05-28T00:00:00","1991-05-29T00:00:00","1991-05-29T00:00:00","1991-05-29T00:00:00","1991-05-30T00:00:00","1991-05-30T00:00:00","1991-05-30T00:00:00","1991-05-31T00:00:00","1991-05-31T00:00:00","1991-05-31T00:00:00","1991-01-06T00:00:00","1991-01-06T00:00:00","1991-01-06T00:00:00","1991-02-06T00:00:00","1991-02-06T00:00:00","1991-03-06T00:00:00","1991-03-06T00:00:00","1991-03-06T00:00:00","1991-04-06T00:00:00","1991-04-06T00:00:00","1991-05-06T00:00:00","1991-05-06T00:00:00","1991-05-06T00:00:00","1991-06-06T00:00:00","1991-06-06T00:00:00","1991-06-06T00:00:00","1991-07-06T00:00:00","1991-07-06T00:00:00","1991-07-06T00:00:00","1991-08-06T00:00:00","1991-08-06T00:00:00","1991-09-06T00:00:00","1991-09-06T00:00:00","1991-09-06T00:00:00","1991-10-06T00:00:00","1991-10-06T00:00:00","1991-10-06T00:00:00","1991-11-06T00:00:00","1991-11-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-12-06T00:00:00","1991-12-06T00:00:00","1991-06-13T00:00:00","1991-06-13T00:00:00","1991-06-14T00:00:00","1991-06-14T00:00:00","1991-06-14T00:00:00","1991-06-15T00:00:00","1991-06-15T00:00:00","1991-06-15T00:00:00","1991-06-16T00:00:00","1991-06-16T00:00:00","1991-06-17T00:00:00","1991-06-17T00:00:00","1991-06-17T00:00:00","1991-06-18T00:00:00","1991-06-18T00:00:00","1991-06-18T00:00:00","1991-06-19T00:00:00","1991-06-19T00:00:00","1991-06-20T00:00:00","1991-06-20T00:00:00","1991-06-20T00:00:00","1991-06-21T00:00:00","1991-06-21T00:00:00","1991-06-21T00:00:00","1991-06-22T00:00:00","1991-06-22T00:00:00","1991-06-22T00:00:00","1991-06-23T00:00:00","1991-06-23T00:00:00","1991-06-23T00:00:00","1991-06-24T00:00:00","1991-06-24T00:00:00","1991-06-24T00:00:00","1991-06-25T00:00:00","1991-06-25T00:00:00","1991-06-25T00:00:00","1991-06-26T00:00:00","1991-06-26T00:00:00","1991-06-26T00:00:00","1991-06-27T00:00:00","1991-06-27T00:00:00","1991-06-27T00:00:00","1991-06-28T00:00:00","1991-06-28T00:00:00","1991-06-28T00:00:00","1991-06-29T00:00:00","1991-06-29T00:00:00","1991-06-29T00:00:00","1991-06-30T00:00:00","1991-06-30T00:00:00","1991-06-30T00:00:00","1991-06-30T00:00:00","1991-01-07T00:00:00","1991-01-07T00:00:00","1991-01-07T00:00:00","1991-02-07T00:00:00","1991-02-07T00:00:00","1991-02-07T00:00:00","1991-03-07T00:00:00","1991-03-07T00:00:00","1991-03-07T00:00:00","1991-04-07T00:00:00","1991-04-07T00:00:00","1991-04-07T00:00:00","1991-04-07T00:00:00","1991-05-07T00:00:00","1991-05-07T00:00:00","1991-05-07T00:00:00","1991-05-07T00:00:00","1991-06-07T00:00:00","1991-06-07T00:00:00","1991-06-07T00:00:00","1991-07-07T00:00:00","1991-07-07T00:00:00","1991-08-07T00:00:00","1991-08-07T00:00:00","1991-09-07T00:00:00","1991-09-07T00:00:00","1991-09-07T00:00:00","1991-10-07T00:00:00","1991-10-07T00:00:00","1991-10-07T00:00:00","1991-11-07T00:00:00","1991-11-07T00:00:00","1991-11-07T00:00:00","1991-12-07T00:00:00","1991-12-07T00:00:00","1991-07-13T00:00:00","1991-07-13T00:00:00","1991-07-13T00:00:00","1991-07-14T00:00:00","1991-07-14T00:00:00","1991-07-15T00:00:00","1991-07-15T00:00:00","1991-07-15T00:00:00","1991-07-16T00:00:00","1991-07-16T00:00:00","1991-07-16T00:00:00","1991-07-17T00:00:00","1991-07-17T00:00:00","1991-07-17T00:00:00","1991-07-18T00:00:00","1991-07-18T00:00:00","1991-07-18T00:00:00","1991-07-19T00:00:00","1991-07-19T00:00:00","1991-07-19T00:00:00","1991-07-20T00:00:00","1991-07-20T00:00:00","1991-07-20T00:00:00","1991-07-21T00:00:00","1991-07-21T00:00:00","1991-07-21T00:00:00","1991-07-22T00:00:00","1991-07-22T00:00:00","1991-07-22T00:00:00","1991-07-23T00:00:00","1991-07-23T00:00:00","1991-07-23T00:00:00","1991-07-24T00:00:00","1991-07-24T00:00:00","1991-07-24T00:00:00","1991-07-25T00:00:00","1991-07-25T00:00:00","1991-07-25T00:00:00","1991-07-26T00:00:00","1991-07-26T00:00:00","1991-07-26T00:00:00","1991-07-27T00:00:00","1991-07-27T00:00:00","1991-07-28T00:00:00","1991-07-28T00:00:00","1991-07-28T00:00:00","1991-07-29T00:00:00","1991-07-29T00:00:00","1991-07-29T00:00:00","1991-07-30T00:00:00","1991-07-30T00:00:00","1991-07-30T00:00:00","1991-07-31T00:00:00","1991-07-31T00:00:00","1991-01-08T00:00:00","1991-01-08T00:00:00","1991-01-08T00:00:00","1991-02-08T00:00:00","1991-02-08T00:00:00","1991-02-08T00:00:00","1991-03-08T00:00:00","1991-04-08T00:00:00","1991-04-08T00:00:00","1991-04-08T00:00:00","1991-05-08T00:00:00","1991-05-08T00:00:00","1991-06-08T00:00:00","1991-06-08T00:00:00","1991-06-08T00:00:00","1991-07-08T00:00:00","1991-07-08T00:00:00","1991-07-08T00:00:00","1991-08-08T00:00:00","1991-08-08T00:00:00","1991-08-08T00:00:00","1991-09-08T00:00:00","1991-09-08T00:00:00","1991-09-08T00:00:00","1991-10-08T00:00:00","1991-10-08T00:00:00","1991-10-08T00:00:00","1991-11-08T00:00:00","1991-12-08T00:00:00","1991-12-08T00:00:00","1991-12-08T00:00:00","1991-08-13T00:00:00","1991-08-13T00:00:00","1991-08-13T00:00:00","1991-08-14T00:00:00","1991-08-14T00:00:00","1991-08-14T00:00:00","1991-08-15T00:00:00","1991-08-15T00:00:00","1991-08-15T00:00:00","1991-08-16T00:00:00","1991-08-16T00:00:00","1991-08-16T00:00:00","1991-08-16T00:00:00","1991-08-17T00:00:00","1991-08-17T00:00:00","1991-08-18T00:00:00","1991-08-18T00:00:00","1991-08-18T00:00:00","1991-08-19T00:00:00","1991-08-19T00:00:00","1991-08-19T00:00:00","1991-08-20T00:00:00","1991-08-20T00:00:00","1991-08-20T00:00:00","1991-08-21T00:00:00","1991-08-21T00:00:00","1991-08-21T00:00:00","1991-08-22T00:00:00","1991-08-22T00:00:00","1991-08-22T00:00:00","1991-08-23T00:00:00","1991-08-23T00:00:00","1991-08-23T00:00:00","1991-08-24T00:00:00","1991-08-24T00:00:00","1991-08-25T00:00:00","1991-08-25T00:00:00","1991-08-25T00:00:00","1991-08-25T00:00:00","1991-08-26T00:00:00","1991-08-26T00:00:00","1991-08-26T00:00:00","1991-08-27T00:00:00","1991-08-27T00:00:00","1991-08-28T00:00:00","1991-08-28T00:00:00","1991-08-28T00:00:00","1991-08-29T00:00:00","1991-08-29T00:00:00","1991-08-30T00:00:00","1991-08-30T00:00:00","1991-08-30T00:00:00","1991-08-31T00:00:00","1991-08-31T00:00:00","1991-08-31T00:00:00","1991-01-09T00:00:00","1991-01-09T00:00:00","1991-02-09T00:00:00","1991-02-09T00:00:00","1991-02-09T00:00:00","1991-03-09T00:00:00"],"xaxis":"x","y":[9,7,10,2,7,11,7,10,4,5,9,4,7,2,9,5,7,10,8,10,7,9,5,8,10,4,7,10,4,7,10,5,7,10,5,7,10,5,7,10,5,7,2,10,5,7,10,5,7,10,5,7,9,4,7,10,4,8,10,4,7,10,4,7,10,5,8,9,5,7,10,6,7,10,7,9,5,7,10,5,7,10,4,7,9,5,7,9,2,7,9,4,8,10,7,10,8,10,7,2,11,7,2,11,2,7,9,4,7,10,4,7,9,3,7,10,3,7,11,3,7,9,7,9,4,7,10,7,9,4,8,10,5,7,10,5,7,10,7,9,5,7,10,4,7,9,4,6,9,4,6,10,6,10,4,6,9,3,6,9,6,7,4,6,9,4,6,10,4,9,4,6,9,4,6,9,4,6,9,4,6,9,4,6,8,4,6,9,4,6,10,4,6,10,4,6,10,2,6,5,5,6,2,10,4,6,8,4,6,10,4,6,10,3,6,2,10,3,6,2,9,3,7,9,7,9,7,7,2,7,8,3,7,8,3,7,10,7,10,3,7,10,7,8,3,7,7,2,7,8,2,7,8,3,7,8,3,7,9,4,7,8,4,7,8,4,7,9,3,7,8,4,8,8,3,7,8,3,7,8,7,8,2,7,8,3,7,8,3,7,7,6,7,3,6,8,4,7,6,8,4,6,9,6,8,3,6,8,3,6,8,2,6,9,4,6,8,4,7,8,8,4,7,8,4,7,9,4,6,9,3,6,9,3,6,2,8,6,8,6,4,8,3,7,8,4,6,8,4,7,8,4,6,8,4,6,8,7,9,4,6,2,8,4,7,8,7,10,4,7,8,7,9,3,7,9,7,1,9,7,9,4,7,9],"yaxis":"y","type":"scatter"},{"hovertemplate":"Kode=34\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"34","line":{"color":"#000003","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"34","orientation":"v","showlegend":true,"x":["1991-04-21T00:00:00","1991-04-22T00:00:00","1991-04-23T00:00:00","1991-04-24T00:00:00","1991-04-25T00:00:00","1991-04-26T00:00:00","1991-04-27T00:00:00","1991-04-28T00:00:00","1991-04-29T00:00:00","1991-04-30T00:00:00","1991-01-05T00:00:00","1991-01-05T00:00:00","1991-02-05T00:00:00","1991-03-05T00:00:00","1991-04-05T00:00:00","1991-05-05T00:00:00","1991-06-05T00:00:00","1991-07-05T00:00:00","1991-08-05T00:00:00","1991-09-05T00:00:00","1991-10-05T00:00:00","1991-11-05T00:00:00","1991-12-05T00:00:00","1991-05-13T00:00:00","1991-05-14T00:00:00","1991-05-15T00:00:00","1991-05-16T00:00:00","1991-05-17T00:00:00","1991-05-18T00:00:00","1991-05-19T00:00:00","1991-05-20T00:00:00","1991-05-21T00:00:00","1991-05-22T00:00:00","1991-05-23T00:00:00","1991-05-24T00:00:00","1991-05-25T00:00:00","1991-05-26T00:00:00","1991-05-27T00:00:00","1991-05-28T00:00:00","1991-05-28T00:00:00","1991-05-29T00:00:00","1991-05-30T00:00:00","1991-05-31T00:00:00","1991-01-06T00:00:00","1991-02-06T00:00:00","1991-03-06T00:00:00","1991-04-06T00:00:00","1991-05-06T00:00:00","1991-06-06T00:00:00","1991-07-06T00:00:00","1991-08-06T00:00:00","1991-09-06T00:00:00","1991-10-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-06-13T00:00:00","1991-06-14T00:00:00","1991-06-15T00:00:00","1991-06-16T00:00:00","1991-06-17T00:00:00","1991-06-18T00:00:00","1991-06-19T00:00:00","1991-06-20T00:00:00","1991-06-21T00:00:00","1991-06-22T00:00:00","1991-06-23T00:00:00","1991-06-24T00:00:00","1991-06-25T00:00:00","1991-06-26T00:00:00","1991-06-27T00:00:00","1991-06-28T00:00:00","1991-06-29T00:00:00","1991-06-30T00:00:00","1991-01-07T00:00:00","1991-02-07T00:00:00","1991-03-07T00:00:00","1991-04-07T00:00:00","1991-05-07T00:00:00","1991-06-07T00:00:00","1991-07-07T00:00:00","1991-08-07T00:00:00","1991-09-07T00:00:00","1991-10-07T00:00:00","1991-11-07T00:00:00","1991-12-07T00:00:00","1991-07-13T00:00:00","1991-07-13T00:00:00","1991-07-14T00:00:00","1991-07-15T00:00:00","1991-07-16T00:00:00","1991-07-17T00:00:00","1991-07-18T00:00:00","1991-07-19T00:00:00","1991-07-20T00:00:00","1991-07-21T00:00:00","1991-07-22T00:00:00","1991-07-23T00:00:00","1991-07-24T00:00:00","1991-07-25T00:00:00","1991-07-26T00:00:00","1991-07-27T00:00:00","1991-07-28T00:00:00","1991-07-29T00:00:00","1991-07-30T00:00:00","1991-07-31T00:00:00","1991-01-08T00:00:00","1991-02-08T00:00:00","1991-03-08T00:00:00","1991-04-08T00:00:00","1991-05-08T00:00:00","1991-06-08T00:00:00","1991-07-08T00:00:00","1991-08-08T00:00:00","1991-09-08T00:00:00","1991-10-08T00:00:00","1991-11-08T00:00:00","1991-12-08T00:00:00","1991-08-13T00:00:00","1991-08-14T00:00:00","1991-08-15T00:00:00","1991-08-16T00:00:00","1991-08-17T00:00:00","1991-08-18T00:00:00","1991-08-19T00:00:00","1991-08-20T00:00:00","1991-08-21T00:00:00","1991-08-22T00:00:00","1991-08-23T00:00:00","1991-08-24T00:00:00","1991-08-25T00:00:00","1991-08-26T00:00:00","1991-08-27T00:00:00","1991-08-28T00:00:00","1991-08-29T00:00:00","1991-08-30T00:00:00","1991-08-31T00:00:00","1991-01-09T00:00:00","1991-02-09T00:00:00","1991-03-09T00:00:00"],"xaxis":"x","y":[13,13,13,14,14,14,14,14,14,14,14,163,13,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,15,15,94,15,15,15,15,15,15,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,15,16,16,16,15,15,15,16,16,16,15,16,15,15,15,15,15,15,15,15,15,15,15,16,16,16,16,16,16,16,16,16,16],"yaxis":"y","type":"scatter"},{"hovertemplate":"Kode=62\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"62","line":{"color":"#000004","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"62","orientation":"v","showlegend":true,"x":["1991-04-21T00:00:00","1991-04-22T00:00:00","1991-04-23T00:00:00","1991-04-24T00:00:00","1991-04-25T00:00:00","1991-04-26T00:00:00","1991-04-27T00:00:00","1991-04-28T00:00:00","1991-04-29T00:00:00","1991-04-30T00:00:00","1991-02-05T00:00:00","1991-03-05T00:00:00","1991-06-05T00:00:00","1991-08-05T00:00:00","1991-10-05T00:00:00","1991-11-05T00:00:00","1991-12-05T00:00:00","1991-05-13T00:00:00","1991-05-14T00:00:00","1991-05-15T00:00:00","1991-05-16T00:00:00","1991-05-17T00:00:00","1991-05-18T00:00:00","1991-05-19T00:00:00","1991-05-20T00:00:00","1991-05-22T00:00:00","1991-05-23T00:00:00","1991-05-24T00:00:00","1991-05-25T00:00:00","1991-05-26T00:00:00","1991-05-29T00:00:00","1991-05-31T00:00:00","1991-01-06T00:00:00","1991-02-06T00:00:00","1991-03-06T00:00:00","1991-05-06T00:00:00","1991-06-06T00:00:00","1991-07-06T00:00:00","1991-08-06T00:00:00","1991-09-06T00:00:00","1991-10-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-06-13T00:00:00","1991-06-14T00:00:00","1991-06-15T00:00:00","1991-06-18T00:00:00","1991-06-19T00:00:00","1991-06-20T00:00:00","1991-06-22T00:00:00","1991-06-23T00:00:00","1991-06-24T00:00:00","1991-06-25T00:00:00","1991-06-26T00:00:00","1991-06-29T00:00:00","1991-06-30T00:00:00","1991-01-07T00:00:00","1991-02-07T00:00:00","1991-03-07T00:00:00","1991-05-07T00:00:00","1991-06-07T00:00:00","1991-07-07T00:00:00","1991-08-07T00:00:00","1991-09-07T00:00:00","1991-10-07T00:00:00","1991-12-07T00:00:00","1991-07-14T00:00:00","1991-07-15T00:00:00","1991-07-16T00:00:00","1991-07-17T00:00:00","1991-07-18T00:00:00","1991-07-19T00:00:00","1991-07-20T00:00:00","1991-07-21T00:00:00","1991-07-22T00:00:00","1991-07-23T00:00:00","1991-07-24T00:00:00","1991-07-27T00:00:00","1991-07-28T00:00:00","1991-07-29T00:00:00","1991-07-30T00:00:00","1991-07-31T00:00:00","1991-01-08T00:00:00","1991-02-08T00:00:00","1991-03-08T00:00:00","1991-05-08T00:00:00","1991-06-08T00:00:00","1991-07-08T00:00:00","1991-08-13T00:00:00","1991-08-15T00:00:00","1991-08-18T00:00:00","1991-08-19T00:00:00","1991-08-20T00:00:00","1991-08-24T00:00:00","1991-08-25T00:00:00","1991-08-26T00:00:00","1991-08-27T00:00:00","1991-08-29T00:00:00","1991-08-30T00:00:00","1991-08-31T00:00:00","1991-01-09T00:00:00","1991-02-09T00:00:00"],"xaxis":"x","y":[119,211,129,129,206,228,256,96,263,185,207,151,229,135,343,82,175,300,43,182,75,201,104,92,91,270,91,256,108,115,240,127,119,147,232,287,70,96,111,70,134,125,74,180,159,139,75,126,66,79,84,217,172,114,51,156,181,193,198,154,222,103,128,229,271,89,191,226,200,207,203,195,201,82,81,179,185,147,208,237,247,117,133,78,257,171,157,248,140,173,95,285,80,246,113,108,170,184,189,113,249,61],"yaxis":"y","type":"scatter"},{"hovertemplate":"Kode=48\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"48","line":{"color":"#000005","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"48","orientation":"v","showlegend":true,"x":["1991-04-21T00:00:00","1991-04-24T00:00:00","1991-04-25T00:00:00","1991-04-28T00:00:00","1991-04-29T00:00:00","1991-04-30T00:00:00","1991-03-05T00:00:00","1991-04-05T00:00:00","1991-05-05T00:00:00","1991-08-05T00:00:00","1991-10-05T00:00:00","1991-11-05T00:00:00","1991-05-13T00:00:00","1991-05-14T00:00:00","1991-05-16T00:00:00","1991-05-23T00:00:00","1991-05-24T00:00:00","1991-05-25T00:00:00","1991-05-26T00:00:00","1991-05-27T00:00:00","1991-05-30T00:00:00","1991-01-06T00:00:00","1991-02-06T00:00:00","1991-03-06T00:00:00","1991-05-06T00:00:00","1991-06-06T00:00:00","1991-07-06T00:00:00","1991-08-06T00:00:00","1991-09-06T00:00:00","1991-10-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-06-13T00:00:00","1991-06-14T00:00:00","1991-06-14T00:00:00","1991-06-15T00:00:00","1991-06-16T00:00:00","1991-06-17T00:00:00","1991-06-20T00:00:00","1991-06-21T00:00:00","1991-06-22T00:00:00","1991-06-23T00:00:00","1991-06-25T00:00:00","1991-06-26T00:00:00","1991-06-27T00:00:00","1991-06-28T00:00:00","1991-06-30T00:00:00","1991-01-07T00:00:00","1991-02-07T00:00:00","1991-04-07T00:00:00","1991-05-07T00:00:00","1991-07-07T00:00:00","1991-08-07T00:00:00","1991-09-07T00:00:00","1991-10-07T00:00:00","1991-12-07T00:00:00","1991-07-15T00:00:00","1991-07-16T00:00:00","1991-07-18T00:00:00","1991-07-20T00:00:00","1991-07-25T00:00:00","1991-07-27T00:00:00","1991-07-29T00:00:00","1991-07-30T00:00:00","1991-07-31T00:00:00","1991-01-08T00:00:00","1991-02-08T00:00:00","1991-05-08T00:00:00","1991-08-16T00:00:00","1991-08-18T00:00:00","1991-08-19T00:00:00","1991-08-24T00:00:00","1991-08-25T00:00:00","1991-08-26T00:00:00","1991-08-28T00:00:00","1991-08-31T00:00:00","1991-01-09T00:00:00","1991-02-09T00:00:00"],"xaxis":"x","y":[123,340,288,200,81,104,85,63,282,129,97,110,76,130,69,79,165,232,180,122,46,77,134,120,113,153,105,212,102,35,94,211,104,35,164,77,94,232,113,269,88,132,112,58,205,251,303,146,101,273,259,225,177,145,162,188,158,67,91,206,160,114,62,144,149,104,218,110,309,140,103,143,284,94,185,272,174,155],"yaxis":"y","type":"scatter"},{"hovertemplate":"Kode=65\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"65","line":{"color":"#000006","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"65","orientation":"v","showlegend":true,"x":["1991-04-29T00:00:00","1991-04-30T00:00:00","1991-01-05T00:00:00","1991-02-05T00:00:00","1991-03-05T00:00:00","1991-05-05T00:00:00","1991-05-05T00:00:00","1991-10-05T00:00:00","1991-05-14T00:00:00","1991-05-25T00:00:00","1991-05-30T00:00:00","1991-05-31T00:00:00","1991-02-06T00:00:00","1991-05-06T00:00:00","1991-07-06T00:00:00","1991-11-06T00:00:00","1991-11-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-06-19T00:00:00","1991-06-20T00:00:00","1991-06-25T00:00:00","1991-06-26T00:00:00","1991-06-27T00:00:00","1991-06-28T00:00:00","1991-02-07T00:00:00","1991-03-07T00:00:00","1991-04-07T00:00:00","1991-06-07T00:00:00","1991-07-07T00:00:00","1991-07-07T00:00:00","1991-08-07T00:00:00","1991-09-07T00:00:00","1991-11-07T00:00:00","1991-07-14T00:00:00","1991-07-15T00:00:00","1991-07-17T00:00:00","1991-07-18T00:00:00","1991-07-21T00:00:00","1991-07-24T00:00:00","1991-01-08T00:00:00","1991-02-08T00:00:00","1991-05-08T00:00:00","1991-06-08T00:00:00","1991-07-08T00:00:00","1991-10-08T00:00:00","1991-08-14T00:00:00","1991-08-15T00:00:00","1991-08-16T00:00:00","1991-08-22T00:00:00","1991-01-09T00:00:00"],"xaxis":"x","y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"yaxis":"y","type":"scatter"},{"hovertemplate":"Kode=60\u003cbr\u003eTanggal=%{x}\u003cbr\u003eNilai Pengukuran=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"60","line":{"color":"#000007","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"60","orientation":"v","showlegend":true,"x":["1991-04-29T00:00:00","1991-04-30T00:00:00","1991-01-05T00:00:00","1991-03-05T00:00:00","1991-05-21T00:00:00","1991-05-23T00:00:00","1991-05-27T00:00:00","1991-05-28T00:00:00","1991-05-29T00:00:00","1991-05-30T00:00:00","1991-01-06T00:00:00","1991-03-06T00:00:00","1991-05-06T00:00:00","1991-06-06T00:00:00","1991-07-06T00:00:00","1991-08-06T00:00:00","1991-09-06T00:00:00","1991-10-06T00:00:00","1991-11-06T00:00:00","1991-12-06T00:00:00","1991-06-13T00:00:00","1991-06-14T00:00:00","1991-06-15T00:00:00","1991-06-16T00:00:00","1991-06-17T00:00:00","1991-06-18T00:00:00","1991-06-19T00:00:00","1991-06-21T00:00:00","1991-06-22T00:00:00","1991-06-23T00:00:00","1991-06-25T00:00:00","1991-06-28T00:00:00","1991-06-29T00:00:00","1991-06-30T00:00:00","1991-01-07T00:00:00","1991-02-07T00:00:00","1991-03-07T00:00:00","1991-04-07T00:00:00","1991-07-07T00:00:00","1991-09-07T00:00:00","1991-10-07T00:00:00","1991-11-07T00:00:00","1991-12-07T00:00:00","1991-07-13T00:00:00","1991-07-16T00:00:00","1991-07-17T00:00:00","1991-07-24T00:00:00","1991-07-25T00:00:00","1991-07-29T00:00:00","1991-07-31T00:00:00","1991-02-08T00:00:00","1991-09-08T00:00:00","1991-08-25T00:00:00","1991-08-27T00:00:00"],"xaxis":"x","y":[192,88,60,81,162,148,220,64,125,187,255,103,105,173,146,202,201,107,106,204,180,187,72,68,159,63,134,128,67,219,133,79,80,306,136,76,113,183,59,74,61,122,267,207,189,136,132,79,54,162,152,199,294,119],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"candlestick":[{"decreasing":{"line":{"color":"#000033"}},"increasing":{"line":{"color":"#000032"}},"type":"candlestick"}],"contourcarpet":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"contourcarpet"}],"contour":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"contour"}],"heatmap":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"heatmap"}],"histogram2d":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"histogram2d"}],"icicle":[{"textfont":{"color":"white"},"type":"icicle"}],"sankey":[{"textfont":{"color":"#000036"},"type":"sankey"}],"scatter":[{"marker":{"line":{"width":0}},"type":"scatter"}],"table":[{"cells":{"fill":{"color":"#000038"},"font":{"color":"#000037"},"line":{"color":"#000039"}},"header":{"fill":{"color":"#000040"},"font":{"color":"#000036"},"line":{"color":"#000039"}},"type":"table"}],"waterfall":[{"connector":{"line":{"color":"#000036","width":2}},"decreasing":{"marker":{"color":"#000033"}},"increasing":{"marker":{"color":"#000032"}},"totals":{"marker":{"color":"#000034"}},"type":"waterfall"}]},"layout":{"coloraxis":{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]]},"colorscale":{"diverging":[[0.0,"#000021"],[0.1,"#000022"],[0.2,"#000023"],[0.3,"#000024"],[0.4,"#000025"],[0.5,"#000026"],[0.6,"#000027"],[0.7,"#000028"],[0.8,"#000029"],[0.9,"#000030"],[1.0,"#000031"]],"sequential":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"sequentialminus":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]]},"colorway":["#000001","#000002","#000003","#000004","#000005","#000006","#000007","#000008","#000009","#000010"]}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Tanggal"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Nilai Pengukuran"}},"legend":{"title":{"text":"Kode"},"tracegroupgap":0},"title":{"text":"Trend Nilai Pengukuran Diabetes"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('5fd76ef2-2065-49f9-aabf-90df005c0450');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                            </script>        </div>
+</body>
+</html></div><div class="output text_html"><html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="5729d4f1-7df9-42d8-adde-b7e048ec911f" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("5729d4f1-7df9-42d8-adde-b7e048ec911f")) {                    Plotly.newPlot(                        "5729d4f1-7df9-42d8-adde-b7e048ec911f",                        [{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"58","marker":{"color":"#000001"},"name":"58","notched":false,"offsetgroup":"58","orientation":"v","showlegend":true,"x":[58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58],"x0":" ","xaxis":"x","y":[100,216,257,239,67,77,259,109,128,179,86,147,305,133,183,91,121,251,87,255,136,236,108,65,183,117,76,244,125,87,122,77,297,246,149,312,295,75,273,217,163,313,102,69,227,75,142,141,182,173,171,156,55,233,194,76,94,133,103,262,152,207,142,184,113,142,168,265,206,263,193,197,66,255,267,256,166,182,169,94,184,129,258,251,225,107,178,121,109,130,257,153,59,261,111,118,70,123,160,87,204,109,90,79,244,246,234,101,165,247,335,201,209,129,199,249,246,251,159,103,98,163,59,138,251,293,89,152,283,135,253,165,183,168,110],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"33","marker":{"color":"#000002"},"name":"33","notched":false,"offsetgroup":"33","orientation":"v","showlegend":true,"x":[33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33],"x0":" ","xaxis":"x","y":[9,7,10,2,7,11,7,10,4,5,9,4,7,2,9,5,7,10,8,10,7,9,5,8,10,4,7,10,4,7,10,5,7,10,5,7,10,5,7,10,5,7,2,10,5,7,10,5,7,10,5,7,9,4,7,10,4,8,10,4,7,10,4,7,10,5,8,9,5,7,10,6,7,10,7,9,5,7,10,5,7,10,4,7,9,5,7,9,2,7,9,4,8,10,7,10,8,10,7,2,11,7,2,11,2,7,9,4,7,10,4,7,9,3,7,10,3,7,11,3,7,9,7,9,4,7,10,7,9,4,8,10,5,7,10,5,7,10,7,9,5,7,10,4,7,9,4,6,9,4,6,10,6,10,4,6,9,3,6,9,6,7,4,6,9,4,6,10,4,9,4,6,9,4,6,9,4,6,9,4,6,9,4,6,8,4,6,9,4,6,10,4,6,10,4,6,10,2,6,5,5,6,2,10,4,6,8,4,6,10,4,6,10,3,6,2,10,3,6,2,9,3,7,9,7,9,7,7,2,7,8,3,7,8,3,7,10,7,10,3,7,10,7,8,3,7,7,2,7,8,2,7,8,3,7,8,3,7,9,4,7,8,4,7,8,4,7,9,3,7,8,4,8,8,3,7,8,3,7,8,7,8,2,7,8,3,7,8,3,7,7,6,7,3,6,8,4,7,6,8,4,6,9,6,8,3,6,8,3,6,8,2,6,9,4,6,8,4,7,8,8,4,7,8,4,7,9,4,6,9,3,6,9,3,6,2,8,6,8,6,4,8,3,7,8,4,6,8,4,7,8,4,6,8,4,6,8,7,9,4,6,2,8,4,7,8,7,10,4,7,8,7,9,3,7,9,7,1,9,7,9,4,7,9],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"34","marker":{"color":"#000003"},"name":"34","notched":false,"offsetgroup":"34","orientation":"v","showlegend":true,"x":[34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34],"x0":" ","xaxis":"x","y":[13,13,13,14,14,14,14,14,14,14,14,163,13,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,15,15,94,15,15,15,15,15,15,15,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,15,16,16,16,15,15,15,16,16,16,15,16,15,15,15,15,15,15,15,15,15,15,15,16,16,16,16,16,16,16,16,16,16],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"62","marker":{"color":"#000004"},"name":"62","notched":false,"offsetgroup":"62","orientation":"v","showlegend":true,"x":[62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62],"x0":" ","xaxis":"x","y":[119,211,129,129,206,228,256,96,263,185,207,151,229,135,343,82,175,300,43,182,75,201,104,92,91,270,91,256,108,115,240,127,119,147,232,287,70,96,111,70,134,125,74,180,159,139,75,126,66,79,84,217,172,114,51,156,181,193,198,154,222,103,128,229,271,89,191,226,200,207,203,195,201,82,81,179,185,147,208,237,247,117,133,78,257,171,157,248,140,173,95,285,80,246,113,108,170,184,189,113,249,61],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"48","marker":{"color":"#000005"},"name":"48","notched":false,"offsetgroup":"48","orientation":"v","showlegend":true,"x":[48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48],"x0":" ","xaxis":"x","y":[123,340,288,200,81,104,85,63,282,129,97,110,76,130,69,79,165,232,180,122,46,77,134,120,113,153,105,212,102,35,94,211,104,35,164,77,94,232,113,269,88,132,112,58,205,251,303,146,101,273,259,225,177,145,162,188,158,67,91,206,160,114,62,144,149,104,218,110,309,140,103,143,284,94,185,272,174,155],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"65","marker":{"color":"#000006"},"name":"65","notched":false,"offsetgroup":"65","orientation":"v","showlegend":true,"x":[65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65],"x0":" ","xaxis":"x","y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"C=%{x}\u003cbr\u003eD=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"60","marker":{"color":"#000007"},"name":"60","notched":false,"offsetgroup":"60","orientation":"v","showlegend":true,"x":[60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60],"x0":" ","xaxis":"x","y":[192,88,60,81,162,148,220,64,125,187,255,103,105,173,146,202,201,107,106,204,180,187,72,68,159,63,134,128,67,219,133,79,80,306,136,76,113,183,59,74,61,122,267,207,189,136,132,79,54,162,152,199,294,119],"y0":" ","yaxis":"y","type":"box"}],                        {"template":{"data":{"candlestick":[{"decreasing":{"line":{"color":"#000033"}},"increasing":{"line":{"color":"#000032"}},"type":"candlestick"}],"contourcarpet":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"contourcarpet"}],"contour":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"contour"}],"heatmap":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"heatmap"}],"histogram2d":[{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"type":"histogram2d"}],"icicle":[{"textfont":{"color":"white"},"type":"icicle"}],"sankey":[{"textfont":{"color":"#000036"},"type":"sankey"}],"scatter":[{"marker":{"line":{"width":0}},"type":"scatter"}],"table":[{"cells":{"fill":{"color":"#000038"},"font":{"color":"#000037"},"line":{"color":"#000039"}},"header":{"fill":{"color":"#000040"},"font":{"color":"#000036"},"line":{"color":"#000039"}},"type":"table"}],"waterfall":[{"connector":{"line":{"color":"#000036","width":2}},"decreasing":{"marker":{"color":"#000033"}},"increasing":{"marker":{"color":"#000032"}},"totals":{"marker":{"color":"#000034"}},"type":"waterfall"}]},"layout":{"coloraxis":{"colorscale":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]]},"colorscale":{"diverging":[[0.0,"#000021"],[0.1,"#000022"],[0.2,"#000023"],[0.3,"#000024"],[0.4,"#000025"],[0.5,"#000026"],[0.6,"#000027"],[0.7,"#000028"],[0.8,"#000029"],[0.9,"#000030"],[1.0,"#000031"]],"sequential":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]],"sequentialminus":[[0.0,"#000011"],[0.1111111111111111,"#000012"],[0.2222222222222222,"#000013"],[0.3333333333333333,"#000014"],[0.4444444444444444,"#000015"],[0.5555555555555556,"#000016"],[0.6666666666666666,"#000017"],[0.7777777777777778,"#000018"],[0.8888888888888888,"#000019"],[1.0,"#000020"]]},"colorway":["#000001","#000002","#000003","#000004","#000005","#000006","#000007","#000008","#000009","#000010"]}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"C"},"categoryorder":"array","categoryarray":[58,33,34,62,48,65,60]},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"D"}},"legend":{"title":{"text":"C"},"tracegroupgap":0},"title":{"text":"Distribusi Nilai per Kode Pengukuran"},"boxmode":"overlay"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('5729d4f1-7df9-42d8-adde-b7e048ec911f');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                            </script>        </div>
+</body>
+</html></div></div>
+</div>
+<p>Tips Visualisasi:</p>
+<p>Untuk data temporal:</p>
+<ol class="arabic simple">
+<li><p>Gunakan line plot atau scatter plot untuk melihat tren</p></li>
+<li><p>Perhatikan pola harian/bulanan</p></li>
+</ol>
+<p>Untuk distribusi:</p>
+<ol class="arabic simple">
+<li><p>Gunakan boxplot atau histogram untuk melihat sebaran data</p></li>
+<li><p>Identifikasi outlier</p></li>
+</ol>
+<p>Untuk perbandingan:</p>
+<ol class="arabic simple">
+<li><p>Gunakan bar plot atau count plot untuk data kategorikal</p></li>
+<li><p>Gunakan warna berbeda untuk kode pengukuran berbeda</p></li>
+</ol>
+<p>Untuk interaksi:</p>
+<ol class="arabic simple">
+<li><p>Plotly memberikan visualisasi interaktif yang bisa di-zoom</p></li>
+<li><p>Berguna untuk mengeksplorasi data lebih detail</p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Binnings_Technics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Binnings Technics</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PRA UAS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#memilih-satu-dataset-dari">1.	Memilih satu dataset dari</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Muhammad Anugrah Supriyandi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
